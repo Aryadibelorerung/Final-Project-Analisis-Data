@@ -72,8 +72,8 @@ def create_year_rent_df(df):
     return year_rent_df
 
 # Membaca dataset harian dan per jam
-day_df = pd.read_csv("day_clean.csv")
-hour_df = pd.read_csv("hour_clean.csv")
+day_df = pd.read_csv("dashboard/day_clean.csv")
+hour_df = pd.read_csv("dashboard/hour_clean.csv")
 
 # Konversi kolom tanggal ke tipe datetime
 datetime_columns = ["dateday"]
@@ -146,7 +146,7 @@ with col3:
 # Memuat dataset dengan caching agar lebih cepat
 @st.cache_data
 def load_data():
-    df = pd.read_csv("day_clean.csv")
+    df = pd.read_csv("dashboard/day_clean.csv")
     return df
 
 day_df = load_data()
